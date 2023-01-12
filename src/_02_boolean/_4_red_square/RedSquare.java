@@ -24,6 +24,17 @@ public class RedSquare {
 		if(isRed && isSquare) {
 			drawRedSquare();
 		}
+		
+		else if(!isRed && isSquare) {
+			drawBlueSquare();
+		}
+		else if(isRed && !isSquare) {
+			drawRedTriangle();
+		}
+		else if(!isRed && !isSquare) {
+			drawBlueTriangle();
+		}
+		
 		else {
             JOptionPane.showMessageDialog(null, "No shape was drawn!");
         }
@@ -32,17 +43,17 @@ public class RedSquare {
 		
 		// 2. Initialize isRed to true instead of false and run the program 
 		//    again.
-		
+		isRed = true;
 		// 3. Write an else if statement after the if statement that calls 
 		//    drawBlueSquare if isRed is false AND isSquare is true. 
 		//    Hint: Use ! and &&.
-		
+	
 		// 4. Write an else if statement that calls drawRedTriangle() if isRed
 		//    is true and isSquare is false.
 		
 		// 5. Write an else if statement that calls drawBlueTriangle if both
 		//    isRed and isSquare are false.
-		
+	
 		// 6. Keep rerunning your program, initializing isRed and isSquare to 
 		//    different values until you've seen a red square, red triangle, 
 		//    blue square and blue triangle drawn.
