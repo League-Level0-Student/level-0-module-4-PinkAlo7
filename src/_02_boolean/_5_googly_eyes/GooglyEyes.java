@@ -40,7 +40,8 @@ import processing.core.PImage;
 public class GooglyEyes extends PApplet {
     static final int WIDTH = 700;
     static final int HEIGHT = 700;
-    
+    int x = 0;
+    int y = 0;
     PImage face;
     
     @Override
@@ -50,7 +51,7 @@ public class GooglyEyes extends PApplet {
     
     @Override
     public void setup() {
-    face = loadImage("googly eyes emoji.png");
+    face = loadImage("googly eyes face.png");
     face.resize(700,700);
     }
    
@@ -62,12 +63,25 @@ public class GooglyEyes extends PApplet {
             println("Mouse’s x-position: " + mouseX + "\n" + "Mouse’s y-position: " + mouseY + "\n");
         }
     	fill(255,255,255);
-    	ellipse(214,271,172,172);
+    	x =mouseX;
+    	y = mouseY;
+    	if(x<153) {
+        x=153;
+    	}
+    	if(x<365) {
+        x=365;
+    	}
+    	if(y<250) {
+        y=250;
+    	}
+    	ellipse(200,295,151,151);
     	fill(10,5,5);
-    	ellipse(mouseX,mouseY,60,60);
+    	ellipse(x,y,60,60);
     	
     	fill(255,255,255);
-    	ellipse(482, 264,240,240);
+    	ellipse(440,205,257,257);
+    	fill(10,5,5);
+    	ellipse(x +200,y,70,70);
     }
 
     static public void main(String[] args) {
