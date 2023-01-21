@@ -65,18 +65,21 @@ public class GooglyEyes extends PApplet {
     	fill(255,255,255);
     	x =mouseX;
     	y = mouseY;
-    	if(x<153) {
-        x=153;
+    	if(x<220) {
+        x=220;
     	}
-    	if(x<365) {
-        x=365;
+    	if(x>258) {
+        x=258;
     	}
-    	if(y<250) {
-        y=250;
+    	if(y<278) {
+        y=278;
+    	}
+    	if(y>299) {
+    	y=299;
     	}
     	ellipse(200,295,151,151);
     	fill(10,5,5);
-    	ellipse(x,y,60,60);
+    	ellipse(x,y,35,35);
     	
     	fill(255,255,255);
     	ellipse(440,205,257,257);
