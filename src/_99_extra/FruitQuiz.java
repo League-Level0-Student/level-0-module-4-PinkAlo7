@@ -13,8 +13,9 @@ public class FruitQuiz extends KeyAdapter {
 	void makeQuestions() {
 		question1 = new JLabel("<html>Which is not a real fruit? <br> A: Dragon Fruit <br> B: Durian <br> C: Crazyberry</html>");
 		// 11. Make another question called "question2".  Use question1 above as a guide.
-		question2 = new JLabel("<html>Which fruit is poisonous? <br> A: Wild Strawberries <br> B: Holly berries <br> C: Honeysuckle</html>");
-		question3 = new JLabel("<html>Which fruit is pink? <br> A: Gooseberries <br> B:Unicorn Berries <br> C: Ivy Berries</html>");
+		question2 = new JLabel("<html>Which fruit is poisonous? <br> A: Holly berries <br> B: Wild Strawberries <br> C: Honeysuckle</html>");
+		question3 = new JLabel("<html>Which fruit is green? <br> A: Gooseberries <br> B: Unicorn Berries <br> C: Ivy Berries</html>");
+		question4 = new JLabel("<html>Which fruit does not grow on a tree? <br> A: Apricots<br> B: Strawberries <br> C: Cherries</html>");
 	}
 
 	@Override
@@ -30,22 +31,64 @@ public class FruitQuiz extends KeyAdapter {
 		// 14. Repeat steps 11, 12, and 13 for question3 and question4 - IMPORTANT: The questions must be in reverse order from top to bottom to work properly
 		
 		// 12. If question2 is showing,
-			if (question2.isShowing()) {
-				
-			
-			// 13. check if it is right or wrong like you did for question1
-		if(keyCode == b) {
-			correct();
-			nextQuestion(question3);
-		}
+		if (question4.isShowing()) {
+			if(keyCode == b) {
+				correct();
+				}
+			else {
+				incorrect();
 			}
+		}
+		
+		if (question3.isShowing()) {
+			if(keyCode == a) {
+				correct();
+				nextQuestion(question4);
+			}
+			else {
+				incorrect(); 
+			}
+		}
+		
+		if (question2.isShowing()) {
+			if(keyCode == a) {
+				correct();
+				nextQuestion(question3);
+			}
+			else {
+				incorrect();
+		}
+		
+		}
 		if (question1.isShowing()) {
-			// 3. If they selected the right fruit, do steps 4 and 7
 			if(keyCode == c) {
 				correct();
 				nextQuestion(question2);
 			}
+			else {
+				incorrect();
+			}
+		}
+		
+		
+		
+	
+		
+	
+
+		
+				
+			
+		
+			// 13. check if it is right or wrong like you did for question1
+		
+		
+			// 3. If they selected the right fruit, do steps 4 and 7
+			
 				// 4. Call the correct() method
+				
+				}
+				
 				
 				// 7. Use the nextQuestion() method to go to question2
 			
@@ -54,23 +97,23 @@ public class FruitQuiz extends KeyAdapter {
 				
 				// 9. Call the incorrect() method
 		
-		}
+		
 
-	}
+	
 
 	private void correct() {
 		// 5. Find a sound for when they get a question right, and drag it into
 		// the 'extra' package. It must be a .wav file. 
 		// There are lots on freesound.org
 		// 6. Use the playSound method to play your sound
-
+playSound("correct.wav");
 
 	}
 
 	private void incorrect() {
 		// 10. Find a sound for wrong answers and put it in the default package. Use the playSound method to play it.
-
-	}
+  playSound("wrong.wav");
+  }
 
 	private void nextQuestion(JLabel newQuestion) {
 		frame.remove(question1);
