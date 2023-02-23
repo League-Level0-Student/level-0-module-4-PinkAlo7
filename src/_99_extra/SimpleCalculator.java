@@ -12,7 +12,7 @@ public class SimpleCalculator {
            String numbers = JOptionPane.showInputDialog("Enter another number please.");
            int num2 = Integer.parseInt(numbers);
 		// 2. Customize pop-up to support add/subtract/multiply/divide operations.
-		int operation = JOptionPane.showOptionDialog(null, "Which optione would you like to do with your 2 numbers?", "Calculator", 0,
+		int operation = JOptionPane.showOptionDialog(null, "Which operation would you like to do with your 2 numbers?", "Calculator", 0,
 				JOptionPane.INFORMATION_MESSAGE, null, new String[] { "Add", "Substract", "Multiply", "Divide" },
 				null);
 		if(operation == 0) {

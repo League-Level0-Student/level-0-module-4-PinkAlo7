@@ -28,10 +28,12 @@ public class StringMethods {
           
            for(int i=0;i<characters.length();i++) {
         	   if(characters.charAt(i) == 'd') {
-        		   System.out.println(i);
+        		   System.out.println("d is at index " +i);
         	   }
         	   
+        	   
            }
+          
 		
 	}
 }
