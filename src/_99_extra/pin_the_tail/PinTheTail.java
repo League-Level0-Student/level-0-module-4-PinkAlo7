@@ -14,7 +14,10 @@ public class PinTheTail extends PApplet {
     static final int HEIGHT = 1373;
     PImage donkey;
     PImage tail;
-    @Override
+	private PImage pink;
+   // @Override
+   int x = 620;
+    int y = 651;
     public void settings() {
         size(WIDTH, HEIGHT);
     }
@@ -23,18 +26,38 @@ public class PinTheTail extends PApplet {
     public void setup() {
         donkey = loadImage("donkey.jpg");
         tail = loadImage("tail.png");
-        size(width,height);
+        pink = loadImage("pink backround.jpg");
+        pink.resize(WIDTH,HEIGHT);
+        size(WIDTH,HEIGHT);
         tail.resize(365,365);
     }
 
     @Override
+    
     public void draw() {
         background (donkey);
-        image(tail, mouseX-10, mouseY-20);
+        rect(0,0,30,30);
+        rect(620,651,30,30);
+        if (dist(0,0,mouseX,mouseY)<30) {
+        background(donkey);
+        }
+        else {
+        	background(pink);
+        }
+        
+        image(tail, x, y);
+        if (mousePressed) {
+			println("Mouse’s x-position: " + mouseX + "\n" + "Mouse’s y-position: " + mouseY + "\n");
+			x = mouseX;
+			y = mouseY;
+				
+        }
         
     }
 
-    static public void main(String[] args) {
+    
+
+	static public void main(String[] args) {
         PApplet.main(PinTheTail.class.getName());
     }
     
