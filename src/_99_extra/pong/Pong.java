@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class Pong extends PApplet {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
-
+   int x=50;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -18,7 +18,9 @@ public class Pong extends PApplet {
 
     @Override
     public void draw() {
-
+fill(245, 66, 179);
+stroke(206, 66, 245);
+ellipse(50,50,20,20);
     }
 
     static public void main(String[] args) {

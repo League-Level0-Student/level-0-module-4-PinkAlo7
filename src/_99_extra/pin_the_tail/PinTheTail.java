@@ -16,8 +16,8 @@ public class PinTheTail extends PApplet {
     PImage tail;
 	private PImage pink;
    // @Override
-   int x = 620;
-    int y = 651;
+   int x = 626;
+    int y = 649;
     public void settings() {
         size(WIDTH, HEIGHT);
     }
@@ -37,7 +37,7 @@ public class PinTheTail extends PApplet {
     public void draw() {
         background (donkey);
         rect(0,0,30,30);
-        rect(620,651,30,30);
+        
         if (dist(0,0,mouseX,mouseY)<30) {
         background(donkey);
         }
@@ -45,11 +45,18 @@ public class PinTheTail extends PApplet {
         	background(pink);
         }
         
+        
         image(tail, x, y);
         if (mousePressed) {
-			println("Mouse’s x-position: " + mouseX + "\n" + "Mouse’s y-position: " + mouseY + "\n");
-			x = mouseX;
+        	background(donkey);
+        	x = mouseX;
 			y = mouseY;
+        	if(dist(x,y,626,649) <13) {
+        		playWhoohoo();
+        		
+        	}
+			println("Mouse’s x-position: " + mouseX + "\n" + "Mouse’s y-position: " + mouseY + "\n");
+			
 				
         }
         
