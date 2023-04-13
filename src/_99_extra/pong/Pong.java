@@ -8,8 +8,8 @@ public class Pong extends PApplet {
     static final int HEIGHT = 600;
    int x=50;
    int y=20;
-   int xspeed = 9;
-   int yspeed = 9;
+   int xspeed = 10;
+   int yspeed = 10;
    PImage backgroundImage;
    
     @Override
@@ -44,6 +44,7 @@ if(mousePressed){
 fill(255, 0, 0);
 stroke(255,0,0);
 rect(mouseX,mouseY,80,5);
+boolean intersects(int x, int y, int mouseX, int mouseY,
 }
 
 
